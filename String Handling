@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char s[] = {"AIDS - 1&2*, CSD* Good learners "};
+    int size;
+    int uppercase = 0, lowercase = 0, special = 0, spaces = 0, digits = 0;
+
+    size = strlen(s);
+
+    for (int i = 0; i < size; i++) 
+    {
+        if (isupper(s[i])) 
+        {
+            uppercase++;
+        } 
+        else if (islower(s[i])) 
+        {
+            lowercase++;
+        } 
+        else if (isdigit(s[i])) 
+        {
+            digits++;
+        } 
+        else if (isspace(s[i])) 
+        {
+            spaces++;
+        } 
+        else 
+        {
+            special++;
+        }
+    }
+
+    printf("The number of uppercase letters: %d\n", uppercase);
+    printf("The number of lowercase letters: %d\n", lowercase);
+    printf("The number of digits: %d\n", digits);
+    printf("The number of spaces: %d\n", spaces);
+    printf("The number of special characters: %d\n", special);
+
+    return 0;
+}
+
