@@ -1,0 +1,65 @@
+#include<stdio.h>
+
+int main() {
+    int ch, qty;
+    float total_cost;
+    float price_chicken_biryani = 250.0;
+    float price_mutton_biryani = 300.0;
+    float price_chilli_chicken = 200.0;
+    float price_old_monk = 100.0;
+    float price_beer = 150.0;
+    float price_100pipers = 500.0;
+    float price_breezer = 120.0;
+
+    printf("\tMENU\n");
+    printf("1. Chicken Biryani - Rs. 250\n");
+    printf("2. Mutton Biryani - Rs. 300\n");
+    printf("3. Chilli Chicken - Rs. 200\n");
+    printf("4. Old Monk - Rs. 100\n");
+    printf("5. Beer - Rs. 150\n");
+    printf("6. 100 Pipers - Rs. 500\n");
+    printf("7. Breezer - Rs. 120\n");
+    printf("8. Default - Item not available\n");
+    printf("Enter your choice: ");
+    scanf("%d", &ch);
+
+    if (ch >= 1 && ch <= 7) {
+        printf("Enter quantity: ");
+        scanf("%d", &qty);
+
+        switch(ch) {
+            case 1:
+                total_cost = qty * price_chicken_biryani;
+                printf("Chicken Biryani x%d = Rs. %.2f\n", qty, total_cost);
+                break;
+            case 2:
+                total_cost = qty * price_mutton_biryani;
+                printf("Mutton Biryani x%d = Rs. %.2f\n", qty, total_cost);
+                break;
+            case 3:
+                total_cost = qty * price_chilli_chicken;
+                printf("Chilli Chicken x%d = Rs. %.2f\n", qty, total_cost);
+                break;
+            case 4:
+                total_cost = qty * price_old_monk;
+                printf("Old Monk x%d = Rs. %.2f\n", qty, total_cost);
+                break;
+            case 5:
+                total_cost = qty * price_beer;
+                printf("Beer x%d = Rs. %.2f\n", qty, total_cost);
+                break;
+            case 6:
+                total_cost = qty * price_100pipers;
+                printf("100 Pipers x%d = Rs. %.2f\n", qty, total_cost);
+                break;
+            case 7:
+                total_cost = qty * price_breezer;
+                printf("Breezer x%d = Rs. %.2f\n", qty, total_cost);
+                break;
+        }
+    } else {
+        printf("Item not available\n");
+    }
+
+    return 0;
+}
